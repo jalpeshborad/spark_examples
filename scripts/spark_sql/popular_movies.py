@@ -12,7 +12,7 @@ from base.context import get_spark_session, get_spark_context
 from base.decorators import time_taken
 from configs.config import DATA_DIR
 
-from scripts.popular_movie import get_movie_names
+from scripts.rdd.popular_movie import get_movie_names
 
 spark = get_spark_session("FriendsByAge")
 sc = get_spark_context("FriendsByAge")
