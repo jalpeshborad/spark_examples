@@ -50,7 +50,7 @@ def main():
                            col("value").getItem("address").alias("address"),
                            col("value").getItem("gender").alias("gender"),
                            )
-    words = payload.groupBy("name").count()
+    words = payload.groupBy("name").count().orderBy("count", ascending=False)
 
     result = words.writeStream.outputMode("complete").format("console")\
         .option("checkpointLocation", check_point_dir).start()
